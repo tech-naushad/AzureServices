@@ -17,8 +17,12 @@ namespace ServiceBus
 
         public async Task NotifyAsync(string queueMessage, CancellationToken cancellationToken)
         {
-            var tasks = _publishers.Select(service => service.PublishAsync(queueMessage, cancellationToken));
-            await Task.WhenAll(tasks);
+            foreach (var publisher in _publishers)
+            {
+                await publisher.PublishAsync(queueMessage, cancellationToken);
+            }
+           // var tasks = _publishers.Select(service => service.PublishAsync(queueMessage, cancellationToken));
+           // await Task.WhenAll(tasks);
         }
     }
 }

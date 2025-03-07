@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "ServiceBusQueueEmailTrigger": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7032"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "containerRunArguments": "--init",
+      "httpPort": 30040,
+      "useSSL": false
+    }
+  }
+}

@@ -1,0 +1,6 @@
+services:
+  servicebusqueueemailtrigger:
+    image: ${DOCKER_REGISTRY-}servicebusqueueemailtrigger
+    build:
+      context: .
+      dockerfile: ServiceBusQueueEmailTrigger/Dockerfile
